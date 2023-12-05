@@ -24,7 +24,13 @@ Implements cursor-based pagination with Node.js and PostgreSQL
 
 3. Source the environment variables
 
-You can find the ENV variables being used in `config.js` at the root of the project. Rename the `.env.example` file to `.env` and fill the desired values for the environment variables (especially DB_USER, more on how to create a user [here](https://phoenixnap.com/kb/postgres-create-user)).
+You can find the ENV variables being used in `config.js` at the project's root level. Rename the `.env.example` file to `.env` and fill in the desired values for the environment variables.
+
+If your Postgres is not set to _trust_ local connections, provide the correct password for your Postgres user. To turn off password authentication, edit your `pg_hba.conf` (run `SHOW hba_file;` as a superuser to know the file location) file to trust all local connections. It should look like this:
+
+```txt
+host    all             all             0.0.0.0/0             trust
+```
 
 Once done, you can do `source .env` on macOS to load environment variables. Otherwise, try replacing "source" with "." (for more information, refer to [this](https://stackoverflow.com/questions/13702425/source-command-not-found-in-sh-shell)) or load the environment variables directly into the terminal.
 
