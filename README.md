@@ -54,4 +54,4 @@ Once done, you can do `source .env` on macOS to load environment variables. Othe
   );
 ```
 
-6. Load sample data in your items table by hitting the API endpoint - GET /item/create.
+6. Load sample data in your items table by hitting the API endpoint - POST /item/create.
